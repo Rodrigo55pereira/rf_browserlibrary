@@ -1,73 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-03-27T15:46:26.515606" rpa="false" schemaversion="5">
-<suite id="s1" name="Serve-Rest-Front" source="/home/rpereira/Workspace/rf_browserlibrary/tests/serve-rest-front.robot">
-<test id="s1-t1" name="Login com sucesso Serve Rest Front" line="6">
-<kw name="Abrir o navegador" owner="serve-rest-front">
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-03-27T17:07:40.253769" rpa="false" schemaversion="5">
+<suite id="s1" name="The-Internet-Herokuapp" source="/home/rpereira/Workspace/rf_browserlibrary/tests/the-internet-herokuapp.robot">
+<test id="s1-t1" name="Interagindo com iFrames" line="11">
+<kw name="Acessar &quot;https://the-internet.herokuapp.com/iframe&quot;" owner="the-internet-herokuapp" source_name="Acessar &quot;${site}&quot;">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-03-27T15:46:26.956252" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/rpereira/Workspace/rf_browserlibrary/reports/browser/traces/6df63fd6-7175-4432-90bc-0316af5bba30"}</msg>
-<msg time="2024-03-27T15:46:27.303233" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/rpereira/Workspace/rf_browserlibrary/reports/browser/traces/6df63fd6-7175-4432-90bc-0316af5bba30"}</msg>
+<msg time="2024-03-27T17:07:40.707685" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/rpereira/Workspace/rf_browserlibrary/reports/browser/traces/d68a5bee-9e09-4d35-955a-7ca8dd73a9fd"}</msg>
+<msg time="2024-03-27T17:07:41.052176" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/rpereira/Workspace/rf_browserlibrary/reports/browser/traces/d68a5bee-9e09-4d35-955a-7ca8dd73a9fd"}</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>headless=${HEADLESS}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-03-27T15:46:26.955314" elapsed="0.348088"/>
+<status status="PASS" start="2024-03-27T17:07:40.706840" elapsed="0.345535"/>
 </kw>
-<kw name="New Context" owner="Browser">
-<msg time="2024-03-27T15:46:27.304271" level="INFO">{
-  "acceptDownloads": true,
-  "bypassCSP": false,
-  "forcedColors": "none",
-  "ignoreHTTPSErrors": false,
-  "javaScriptEnabled": true,
-  "offline": false,
-  "reducedMotion": "no-preference",
-  "serviceWorkers": "allow",
-  "viewport": {
-    "height": 800,
-    "width": 1200
-  }
-}</msg>
-<msg time="2024-03-27T15:46:27.316831" level="INFO">Successfully created context. </msg>
-<msg time="2024-03-27T15:46:27.316907" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 800, 'width': 1200}}</msg>
-<arg>viewport={'width':1200, 'height':800}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2024-03-27T15:46:27.303626" elapsed="0.013370"/>
-</kw>
-<status status="PASS" start="2024-03-27T15:46:26.954424" elapsed="0.362695"/>
-</kw>
-<kw name="Ir para o site Serve Rest Front" owner="serve-rest-front">
 <kw name="New Page" owner="Browser">
-<msg time="2024-03-27T15:46:29.354904" level="INFO">Successfully initialized new page object and opened url: https://front.serverest.dev/</msg>
-<arg>url=${SITE_SERVE_REST}</arg>
+<msg time="2024-03-27T17:07:43.714627" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/iframe</msg>
+<msg time="2024-03-27T17:07:43.714828" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>url=${site}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-03-27T15:46:27.317669" elapsed="2.037443"/>
+<status status="PASS" start="2024-03-27T17:07:41.052656" elapsed="2.662574"/>
 </kw>
-<status status="PASS" start="2024-03-27T15:46:27.317365" elapsed="2.037905"/>
+<status status="PASS" start="2024-03-27T17:07:40.706019" elapsed="3.009526"/>
 </kw>
-<kw name="Preencher os dados do novo usuário e cadastrar" owner="serve-rest-front">
-<kw name="Click" owner="Browser">
-<arg>css=.btn-link</arg>
+<kw name="Obter frase de dentro do iFrame" owner="the-internet-herokuapp">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-03-27T17:07:43.790447" level="INFO">Text: 'Your content goes here.'</msg>
+<msg time="2024-03-27T17:07:43.790611" level="INFO">${text} = Your content goes here.</msg>
+<var>${text}</var>
+<arg>id=mce_0_ifr &gt;&gt;&gt; id=tinymce</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
 <tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-03-27T15:46:29.355958" elapsed="0.289313"/>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-27T17:07:43.716735" elapsed="0.073903"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-03-27T15:46:34.646030" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-03-27T15:46:29.645528" elapsed="5.000853"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-27T17:07:43.791031" level="INFO">Your content goes here.</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-27T17:07:43.790843" elapsed="0.000257"/>
 </kw>
-<status status="PASS" start="2024-03-27T15:46:29.355582" elapsed="5.291262"/>
+<status status="PASS" start="2024-03-27T17:07:43.716081" elapsed="0.075098"/>
 </kw>
-<status status="PASS" start="2024-03-27T15:46:26.951211" elapsed="7.696340"/>
+<kw name="Tirar Print" owner="the-internet-herokuapp" type="TEARDOWN">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-03-27T17:07:43.897063" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-03-27T17:07:43.791699" elapsed="0.105488"/>
+</kw>
+<status status="PASS" start="2024-03-27T17:07:43.791443" elapsed="0.105858"/>
+</kw>
+<status status="PASS" start="2024-03-27T17:07:40.703047" elapsed="3.194349"/>
 </test>
-<status status="PASS" start="2024-03-27T15:46:26.516325" elapsed="8.250607"/>
+<status status="PASS" start="2024-03-27T17:07:40.254471" elapsed="3.728262"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +64,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Serve-Rest-Front">Serve-Rest-Front</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="The-Internet-Herokuapp">The-Internet-Herokuapp</stat>
 </suite>
 </statistics>
 <errors>

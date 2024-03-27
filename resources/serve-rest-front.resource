@@ -1,7 +1,7 @@
 *** Settings ***
 
 Library     Browser
-
+Library     FakerLibrary
 
 *** Variables ***
 ${BROWSER}            chromium
@@ -19,8 +19,40 @@ Abrir o navegador
 
 Ir para o site Serve Rest Front
     New Page       url=${SITE_SERVE_REST}
+    ${title}       Get Title  ==  Front - ServeRest
+    Log   ${title}
 
 
 Preencher os dados do novo usuário e cadastrar
-    Click         css=.btn-link
-    Sleep         5s
+    #Record Selector    
+    Click             css=.btn-link
+    ${EMAIL}          FakerLibrary.Email
+    Fill Text         css=input[data-testid='nome']       Rodrigo Pereira
+    Fill Text         css=input[data-testid='email']      ${EMAIL}
+    Fill Text         css=input[data-testid='password']   123456
+    Check Checkbox    css=input[data-testid='checkbox']
+    Click             css=button[data-testid='cadastrar']
+    #Click             xpath=//*[@id="root"]//button >> text="Cadastrar"  
+    
+ 
+
+Conferir usuário cadastrado com sucesso
+    #Wait For Elements State       h1    visible
+    Get Text                      h1  ==  Bem Vindo Rodrigo Pereira
+    Get Element States            css=button[data-testid='logout']  validate  value & visible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
